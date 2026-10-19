@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IIUM Huffaz Leadership Programme</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#fbfaf6;--surface:#fff;--text:#16241d;--muted:#5b6b63;--brand:#0f5a3f;--brand-d:#0a4130;--accent:#c8993a;--line:#e5e3da;--hero:linear-gradient(135deg,#0a4130,#0f5a3f 60%,#177552);--hero-text:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1612;--surface:#14211b;--text:#eaf1ed;--muted:#9bb0a5;--brand:#3fbf8a;--brand-d:#2da877;--accent:#e0b559;--line:#243329;--hero:linear-gradient(135deg,#0a1f17,#0f3a2a 60%,#14503a)}}
+:root[data-theme="dark"]{--bg:#0d1612;--surface:#14211b;--text:#eaf1ed;--muted:#9bb0a5;--brand:#3fbf8a;--brand-d:#2da877;--accent:#e0b559;--line:#243329;--hero:linear-gradient(135deg,#0a1f17,#0f3a2a 60%,#14503a)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:grid;place-items:center;font-style:normal;font-size:15px}
+.logo small{display:block;font-weight:500;color:var(--muted);font-size:11px;line-height:1}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px;align-items:center}
+nav li{position:relative}
+nav li>a{display:block;padding:8px 11px;border-radius:8px;font-size:14px;font-weight:600;color:var(--muted)}
+nav li>a:hover,nav li:focus-within>a{color:var(--text);background:var(--line)}
+.dd{position:absolute;top:100%;left:0;min-width:210px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,.12);display:none;flex-direction:column}
+nav li:hover>.dd,nav li:focus-within>.dd{display:flex}
+.dd a{padding:8px 12px;border-radius:8px;font-size:13.5px;font-weight:500;color:var(--text)}
+.dd a:hover{background:var(--line)}
+.cta{background:var(--brand);color:#fff!important;border-radius:999px!important;padding:8px 16px!important}
+.cta:hover{background:var(--brand-d)!important}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;width:42px;height:42px;font-size:20px;cursor:pointer}
+@media (max-width:960px){
+ .burger{display:block}
+ nav{position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);display:none;max-height:calc(100vh - 80px);overflow:auto}
+ nav.open{display:block}
+ nav ul{flex-direction:column;align-items:stretch;padding:10px 20px 18px}
+ .dd{position:static;display:flex;box-shadow:none;border:0;padding:0 0 4px 12px;background:none}
+}
+/* hero */
+.hero{background:var(--hero);color:var(--hero-text);padding:96px 0 88px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.05)}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.08;margin:14px 0 18px;max-width:760px;font-weight:800}
+.hero p{max-width:640px;font-size:17px;opacity:.88;margin:0 0 30px}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:700;font-size:15px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--accent);color:#1b1608}
+.btn-line{border:1.5px solid rgba(255,255,255,.4);color:#fff;margin-left:10px}
+/* about */
+section{padding:80px 0}
+h2{font-size:clamp(26px,4vw,38px);line-height:1.15;margin:8px 0 14px;font-weight:800}
+.lead{color:var(--muted);max-width:640px;margin:0}
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card .ic{font-size:26px}.card h3{margin:10px 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:14.5px}
+/* featured program */
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr}
+.f-body{padding:44px}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;background:color-mix(in srgb,var(--accent) 22%,transparent);color:var(--text)}
+.f-body h2{font-size:clamp(24px,3.4vw,34px)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:26px 0}
+.stats b{display:block;font-size:22px;color:var(--brand)}.stats span{font-size:13px;color:var(--muted)}
+.count{display:flex;gap:10px;margin:0 0 24px}
+.count div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 0;width:64px;text-align:center}
+.count b{display:block;font-size:22px}.count span{font-size:11px;color:var(--muted);text-transform:uppercase}
+.f-side{background:var(--hero);color:#fff;padding:44px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.f-side div{border-left:3px solid var(--accent);padding:2px 0 2px 14px}
+.f-side b{display:block;font-size:13px;opacity:.7;font-weight:600}.f-side span{font-size:16px;font-weight:700}
+.btn-solid{background:var(--brand);color:#fff}
+.btn-out{border:1.5px solid var(--line);margin-left:8px}
+@media (max-width:800px){.feature{grid-template-columns:1fr}.f-body,.f-side{padding:28px}}
+/* contact */
+.contact{background:var(--hero);color:#fff}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:34px}
+.cgrid a,.cgrid div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:22px;display:block}
+.cgrid a:hover{background:rgba(255,255,255,.14)}
+.cgrid small{display:block;color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:11px;margin-bottom:6px}
+footer{padding:22px 0;text-align:center;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#top"><i>HLP</i><span>IIUM Huffaz Leadership<small>Programme</small></span></a>
+  <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+  <nav id="nav"><ul>
+   <li><a href="#top">Home</a></li>
+   <li><a href="#about">About us</a><div class="dd"><a href="#">HLP Staff</a><a href="#">Student Committee</a><a href="#">HLP Policy</a></div></li>
+   <li><a href="#">Applications</a><div class="dd"><a href="#">HLP</a><a href="#">Syabab Members</a></div></li>
+   <li><a href="#program">Programmes</a><div class="dd"><a href="#">Huffaz Leadership Camp 2026</a><a href="#">Qur’anic Journey: Sab‘ Tiwāl</a><a href="#">IQ Lead 2026</a></div></li>
+   <li><a href="#">Events</a><div class="dd"><a href="#">HLP Events</a><a href="#">M.A.W.A.R Week 2026</a><a href="#">Annual Leadership Camp</a><a href="#">Usrah Highlights</a></div></li>
+   <li><a href="#">Accomplishments</a><div class="dd"><a href="#">Academic Excellence</a><a href="#">HLP Awards</a></div></li>
+   <li><a href="#">Publications</a><div class="dd"><a href="#">Radiance Magazine</a><a href="#">Podcast</a></div></li>
+   <li><a href="#">Takrim</a></li>
+   <li><a href="#">Support Us</a></li>
+   <li><a class="cta" href="#contact">Contact</a></li>
+  </ul></nav>
+ </div>
+</header>
+
+<main id="top">
+ <div class="hero"><div class="wrap">
+  <span class="eyebrow">International Islamic University Malaysia</span>
+  <h1>Leaders enriched with Qur’anic wisdom.</h1>
+  <p>We empower students to continue their Quranic memorisation through structured activities and comprehensive support, nurturing spiritual growth and a deep connection to Quranic principles.</p>
+  <a class="btn btn-gold" href="#about">Discover more</a><a class="btn btn-line" href="#program">Featured programme</a>
+ </div></div>
+
+ <section id="about"><div class="wrap">
+  <span class="eyebrow" style="color:var(--brand)">About the programme</span>
+  <h2>Faith, character and service.</h2>
+  <p class="lead">Our aspiration is to cultivate a generation of leaders devoted to advancing the goals of IIUM and serving the wider community with integrity, compassion and excellence.</p>
+  <div class="pillars">
+   <div class="card"><div class="ic">📖</div><h3>Quranic Growth</h3><p>Structured support to keep memorising and deepen connection with the Qur’an.</p></div>
+   <div class="card"><div class="ic">🧭</div><h3>Holistic Leadership</h3><p>Camps, usrah and training that build Rabbani leadership capabilities.</p></div>
+   <div class="card"><div class="ic">🤝</div><h3>Community Service</h3><p>Serving IIUM and the wider ummah with integrity and compassion.</p></div>
+  </div>
+ </div></section>
+
+ <section id="program" style="padding-top:0"><div class="wrap">
+  <span class="eyebrow" style="color:var(--brand)">Featured programme</span>
+  <h2 style="margin-bottom:28px">Our flagship gathering</h2>
+  <div class="feature">
+   <div class="f-body">
+    <span class="badge" id="badge">🌟 Registration closed — all seats filled</span>
+    <h2 style="margin-top:16px">Huffaz Leadership Camp 2026: Leading the Ummah with Qur’anic Light</h2>
+    <p class="lead" style="font-size:15px">An international flagship gathering of 130 undergraduates from Malaysia and Southeast Asia — four days of Rabbani leadership formation.</p>
+    <div class="stats"><div><b>4D3N</b><span>21–24 Sept 2026</span></div><div><b>130</b><span>Undergraduate Huffaz</span></div><div><b>5</b><span>Countries represented</span></div><div><b>KLCC</b><span>Masjid Asy-Syakirin</span></div></div>
+    <div class="count" id="count"><div><b id="d">–</b><span>Days</span></div><div><b id="h">–</b><span>Hrs</span></div><div><b id="m">–</b><span>Min</span></div><div><b id="s">–</b><span>Sec</span></div></div>
+    <a class="btn btn-solid" href="#">Explore the programme</a><a class="btn btn-out" href="#">Join our Syabab wing</a>
+   </div>
+   <div class="f-side">
+    <div><b>Dates</b><span>21–24 September 2026</span></div>
+    <div><b>Venue</b><span>Masjid Asy-Syakirin, KLCC</span></div>
+    <div><b>Participants</b><span>130 undergraduates</span></div>
+   </div>
+  </div>
+ </div></section>
+
+ <section id="contact" class="contact"><div class="wrap">
+  <span class="eyebrow">Get in touch</span>
+  <h2>Questions? We’d love to hear from you.</h2>
+  <div class="cgrid">
+   <div><small>Visit us</small>Jalan Gombak, 53100 Kuala Lumpur, Selangor</div>
+   <a href="tel:+60364214565"><small>Call us</small>Prof. Dr. Nurul Fadzlin Hasbullah<br>03-6421 4565<br><span style="opacity:.7;font-size:13px">Mon–Fri, 8:00 am – 5:00 pm</span></a>
+   <a href="mailto:hslp@iium.edu.my"><small>Email us</small>hslp@iium.edu.my</a>
+  </div>
+ </div></section>
+</main>
+<footer>© IIUM Huffaz Leadership Programme</footer>
+
+<script>
+(function(){
+ var target=new Date("2026-09-21T00:00:00+08:00").getTime();
+ function p(n){return String(n).padStart(2,"0")}
+ function tick(){
+  var diff=target-Date.now();
+  if(diff<=0){document.getElementById("count").style.display="none";document.getElementById("badge").textContent="✅ Camp concluded — alhamdulillah";return}
+  document.getElementById("d").textContent=Math.floor(diff/864e5);
+  document.getElementById("h").textContent=p(Math.floor(diff%864e5/36e5));
+  document.getElementById("m").textContent=p(Math.floor(diff%36e5/6e4));
+  document.getElementById("s").textContent=p(Math.floor(diff%6e4/1e3));
+ }
+ tick();setInterval(tick,1000);
+ document.querySelectorAll("nav a").forEach(function(a){a.addEventListener("click",function(){document.getElementById("nav").classList.remove("open")})});
+})();
+</script>
+</body>
+</html>
